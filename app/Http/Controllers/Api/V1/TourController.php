@@ -14,7 +14,6 @@ class TourController extends Controller
         $tours = $travel->tours()
         ->orderBy('starting_date')
         ->paginate();
-        
         return TourResource::collection($tours);
     }
 }

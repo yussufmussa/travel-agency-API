@@ -20,9 +20,9 @@ class TourFactory extends Factory
         return [
             'travel_id' => Travel::inRandomOrder()->take(10)->first()->id,
             'name' => fake()->text(maxNbChars: 10),
-            'starting_day' => fake()->date(),
-            'ending_date' => fake()->date(),
-            'price' => (rand(100, 2000) * 100),
+            'starting_day' => now(),
+            'ending_date' => now()->addDays(rand(1,10)),
+            'price' => fake()->randomFloat(nbMaxDecimals:2, min:10, max:999),
         ];
         
     }
